@@ -15,3 +15,7 @@ use App\Http\Controllersr\TaskController;
 */
 
 Route::get('/folders/{id}/tasks', 'App\Http\Controllers\TaskController@index')->name('tasks.index');
+
+Route::get('/', function () {
+    return view('index');
+});
