@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllersr\TaskController;
+use App\Http\Controllersr\FolderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,7 @@ Route::get('/folders/{id}/tasks', 'App\Http\Controllers\TaskController@index')->
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/folders/create', 'App\Http\Controllers\FolderController@showCreateForm')->name('folders.create');
+
+Route::post('/folders/create', 'App\Http\Controllers\FolderController@create');
